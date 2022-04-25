@@ -54,4 +54,8 @@ class Actions:
         for item in self.driver.find_elements_by_xpath(xpath):
             result.append(item.text)
         return result
-
+    # 前往頁面 environment = 'qa', ''
+    def gotoURL(self, environment):
+        environment = self.config['WEBSITES']['environment']
+        website = self.config['WEBSITES'][environment]
+        self.driver.get(website)
